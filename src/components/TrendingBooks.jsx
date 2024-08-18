@@ -7,7 +7,7 @@ import 'react-multi-carousel/lib/styles.css';
 import BookCard from './BookCard';
 
 const TrendingBooks = () => {
-  const { data: books } = useFetch();
+  const { data: books} = useFetch();
   const sortedBooks = orderBy(books, 'popularity', 'desc'); // Sort the books array
   const navigate = useNavigate(); // Initialize useNavigate
 
@@ -42,20 +42,25 @@ const TrendingBooks = () => {
 
   return (
     <div className='cobtainer mx-auto bg-accent my-8 p-8'>
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-3xl font-bold">Trending Books</h2>        
+      <div >
+        <div className="flex items-center justify-between mb-4">
+        <h2 className="text-3xl font-bold">Trending Books</h2> 
+        <div className='text-primary font-bold my-4  mr-8'>
+        <Link to='/books'>View All Books</Link>
+        </div>
+    </div>       
       </div>
-
+      <div className='max-h-lg'>
       <Carousel {...carouselSettings}>
         {sortedBooks.map(book => (
-          <div key={book.id} className="p-4">
+          <div key={book.id} className="h-full">
            <BookCard book={book}/>
           </div>
         ))}
       </Carousel>
-      <div className='text-primary'>
-        <Link to='/books'>View All Books</Link>
-        </div>
+      </div>
+      
+        
     </div>
   );
 }

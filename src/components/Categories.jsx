@@ -116,7 +116,7 @@ const Categories = () => {
           </div>
           
         </div>
-        <div className="grid grid-cols-4 gap-4 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
           {filteredBooks.map((book) => (
             <div key={book.id} className="bg-white border border-gray-300 p-4 rounded-lg">
               <BookCard book={book} />

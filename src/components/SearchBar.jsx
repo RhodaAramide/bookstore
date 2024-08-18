@@ -15,10 +15,10 @@ const handleWishClick = () => {
   return (
     <div className="container mx-auto">
       <div className="bg-white">
-        <div className="flex justify-between items-center border-b border-background py-2">
+        <div className="flex justify-between border-b border-background py-2">
           <div className='flex justify-between'>
-          <img src={samplelogo} alt="logo" className="w-10 h-10" />
-          <h1 className="text-3xl text-text font-bold pl-4">BookHaven</h1> 
+            <img src={samplelogo} alt="logo" className="w-10 h-10" />
+            <h1 className="text-3xl text-text font-bold pl-4">BookHaven</h1> 
           </div>
           <div className='flex justify-between'>
           <input className="appearance-none bg-transparent border-text w-full text-text mr-3 py-1 px-2 leading-tight focus:outline-none" 

@@ -10,7 +10,7 @@ const Header = () => {
   };
   return (
     <section className="mx-auto bg-accent pt-8">
-      <div className="grid grid-cols-2 gap=8 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap=8 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-4 overflow-hidden pt-8 text-text">
           <h1 className='text-6xl mb-4 pt-8 font-bold'>Read. Learn. Grow.</h1>
           <div className='mb-6 font-3xl'>
@@ -27,8 +27,8 @@ const Header = () => {
               VIEW MORE
             </button>
         </div>
-        <div className=' flex justify-center'>
-          <img src={headerImg} alt='header' className="w-full h-auto object-cover" />
+        <div className=''>
+          <img src={headerImg} alt='header' className="max-w-lg object-cover" />
         </div>
       </div>
     </section>

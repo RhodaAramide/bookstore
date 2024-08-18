@@ -57,7 +57,7 @@ const BookList = () => {
             <ArrowCircleLeftIcon className="w-6 h-6" /> 
             <p>Go Back </p>
         </div>
-      <div className="flex justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
       <div>
       <h1 className="text-2xl font-bold py-4">Book Listings</h1>
       <div className="font-bold">
@@ -99,7 +99,7 @@ const BookList = () => {
       </div>
       </div>
       </div>
-      <div className="grid grid-cols-3 gap-2 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-8">
         {filteredBooks.map((book) => (  
         <div key={book.id}>             
             <BookCard book={book}/>          

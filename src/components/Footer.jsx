@@ -6,11 +6,11 @@ import facebookIcon from '../assets/images/FacebookIcon.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white mt-8 p-4 text-center ">      
+    <footer className="bg-text text-white mt-8 p-4 text-center ">      
       <div className="w-full mt-8">
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-8'>
           <div>
-            <h4 className='mb-8'>EaseExplore</h4>
+            <h4 className='mb-8'>BookHaven</h4>
             <p>+ 234 000 000 000</p>
             <p className='text-underline'>support@easeexplore.com</p>
           </div>
@@ -35,10 +35,10 @@ const Footer = () => {
               <input
                 type="text"
                 placeholder="Get Updates"          
-                className=" text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none"
+                className=" text-gray-900 p-2 rounded-l-lg border-2 border-text focus:outline-none"
               />
               <button           
-                className="bg-primary text-white px-6 py-2 rounded-r-lg shadow-md hover:bg-backround transition duration-300"
+                className="bg-text text-white px-6 py-2 rounded-r-lg shadow-md hover:bg-backround transition duration-300"
               >
                 Go
               </button>
@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
           </div>
           <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
-        <div className='flex justify-between gap-2 p-4 text-text font-bold'> 
+        <div className='flex justify-between gap-2 p-4 text-black font-bold'> 
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 border-rounded'>
             <img src={twitterIcon} className='' />
             <img src={instagramIcon} />
@@ -58,7 +58,7 @@ const Footer = () => {
             <a href="#" className="hover:text-gray-300">Privacy Policy</a>
             <a href="#" className="hover:text-gray-300">Terms of Service</a>
             <p className="font-bold">
-              © 2024 EaseExplore. All rights reserved.
+              © 2024 BookHaven. All rights reserved.
             </p>                  
           </div>
         </div>

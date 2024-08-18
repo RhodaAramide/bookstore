@@ -81,18 +81,18 @@ const DailyDeals = () => {
     }, 100);
   };
   return (
-    <div className=' mb-8'>
-      <h2 className="text-2xl font-bold mb-4">Daily Deals</h2>
-      <div className="grid grid-cols-2 mx-8 bg-[#FCEBEA]">
-      <div className="flex flex-col justify-normal p-16 font-bold">
-      <h2 className="text-3xl font-bold">Today's Deal!</h2>
-      <h2 className="text-3xl font-bold mb-4">Special Offers just for you!</h2>
-      <h3 className="text-2xl mb-4">{displayedTitle}</h3>
-      <p className="text-lg">{displayedOffer}</p>   
-        <p className="mt-8">Don't miss such a deal!</p>
+    <div className='mb-8'>
+      <h2 className="ml-4 text-2xl font-bold mb-4">Daily Deals</h2>
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 bg-[#FCEBEA]">    
+      <div className="p-16 font-bold">
+        <h2 className="text-7xl font-bold pb-2">Today's Deal!</h2>
+        <h2 className="text-3xl font-bold mb-4">Special Offers just for you!</h2>
+        <h3 className="text-primary text-2xl mb-4">{displayedTitle}</h3>
+        <p className="text-primary text-lg">{displayedOffer}</p>   
+         <p className="text-black mt-8">Don't miss such a deal!</p>
       </div>
       <div className='my-8 mr-8'>
-        <img src={Unsplash} alt="daily_deals" className="object-cover w-full" />        
+        <img src={Unsplash} alt="daily_deals" className="object-cover max-w-lg" />        
       </div>
       </div>
       {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
