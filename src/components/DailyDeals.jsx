@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // import useFetch from '../useFetch';
-import Unsplash from '../assets/images/unsplash.svg';
+import Unsplash from '../assets/images/Unsplash.svg';
 
 const DailyDeals = () => {
   // const { data: books, isPending, error } = useFetch('http://localhost:8000/books');
