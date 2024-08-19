@@ -81,18 +81,38 @@ const DailyDeals = () => {
     }, 100);
   };
   return (
-    <div className='mb-8'>
+    <div className='mb-8 mt-8 pt-8 bg-white'>
       {/* <h2 className="ml-4 text-2xl font-bold mb-4">Daily Deals</h2> */}
+      <div className='flex justify-center'>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 bg-[#FCEBEA]">    
-      <div className="p-16 font-bold">
-        <h2 className="text-7xl font-bold pb-2">Today's Deal!</h2>
-        <h2 className="text-3xl font-bold mb-4">Special Offers just for you!</h2>
-        <h3 className="text-primary text-2xl mb-4">{displayedTitle}</h3>
-        <p className="text-primary text-lg">{displayedOffer}</p>   
-         <p className="text-black mt-8">Don't miss such a deal!</p>
+      <div className="p-8 m-8 font-bold">
+        <h2 className="text-5xl font-bold pb-2">Today's Deal!</h2>
+        <h2 className="text-3xl font-bold mb-8">Special Offers just for you!</h2>
+        <h3 className="text-primary text-3xl mb-2">{displayedTitle}</h3>
+        <p className="text-primary mb-4 text-xl">{displayedOffer}</p>   
+        <div className="font-bold flex justify-between text-2xl">
+          <div>
+            <p className="text-primary">02</p>
+            <p className="text-text">DAYS</p>
+          </div>
+          <div>
+            <p className="text-primary">03</p>
+            <p className="text-text">HRS</p>
+          </div>
+          <div>
+            <p className="text-primary">27</p>
+            <p className="text-text">MIN</p>
+          </div>
+          <div>
+            <p className="text-primary">55</p>
+            <p className="text-text">SEC</p>
+          </div>
+
+        </div>
+         <p className="text-black text-xl mt-8">Don't miss such a deal!</p>
       </div>
       <div className='my-8 mr-8'>
-        <img src={Unsplash} alt="daily_deals" className="object-cover max-w-lg" />        
+        <img src={Unsplash} alt="daily_deals" className="object-cover max-w-md" />        
       </div>
       </div>
       {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -111,6 +131,7 @@ const DailyDeals = () => {
           </div>
         ))}
       </div> */}
+    </div>
     </div>
   );
 }

@@ -13,10 +13,10 @@ import FeaturedBook from '../components/FeaturedBook';
 
 const HomePage = () => {
   return (
-    <div>     
+    <div className=''>     
     <SearchBar />   
     <Navbar />
-    <div className='container mx-auto text-text'>
+    <div className='text-text'>
       
       <Header />
       

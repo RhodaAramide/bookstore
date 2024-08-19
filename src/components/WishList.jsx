@@ -23,26 +23,33 @@ const WishList = () => {
   }
 
   return (
-    <div className='container mx-auto bg-accent'>
-      <h2 className="text-2xl font-bold my-4">Wishlist</h2>
+    <div className=' bg-accent'>
+      <div className='container mx-auto'>
+      <h2 className="text-2xl font-bold py-4"> My Wishlist</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {wishlistItems.map(book => (
           <div key={book.id} className="border p-4 rounded">
-            <img src={book.cover_image} alt={book.title} className="object-cover w-full h-96" />
-            <h3 className="text-lg font-bold">{book.title}</h3>
+            <img src={book.cover_image} alt={book.title} className="object-cover w-full h-72" />
+            <div className="flex justify-center">
+              <div>
+            <h3 className="text-2xl font-bold">{book.title}</h3>
+            <div className="text-lg text-text font-semibold mb-4">
             <p>Author: {book.author}</p>
             <p>Genre: {book.genre}</p>
-            <p>Price: ${book.price}</p>
-            
+            <p>Price: ${book.price}</p>        
+            </div>    
             <button
               className="px-4 py-2 bg-red-500 text-white rounded"
               onClick={() => handleRemoveFromWishlist(book.id)}
             >
               Remove
             </button>
+            </div>
+            </div>
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }

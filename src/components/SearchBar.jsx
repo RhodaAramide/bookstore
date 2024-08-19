@@ -2,6 +2,7 @@ import React from 'react';
 import { HeartIcon, SearchIcon, ShoppingCartIcon, UserCircleIcon } from '@heroicons/react/outline';
 import samplelogo from '../assets/images/samplelogo.svg';
 import { useNavigate } from 'react-router-dom';
+import BookList from './BookList';
 
 const SearchBar = () => {
   const navigate = useNavigate(); // Initialize useNavigate
@@ -10,8 +11,9 @@ const SearchBar = () => {
   // const handleSearch = (event) => {
   //   setSearchTerm(event.target.value);
   // };
-  const handleSearch = (event) => {
-    navigate(`/books`); // Navigate to SearchPage
+  const handleSearch = () => {
+    navigate('/books');
+    // navigate(<BookList {...searchTerm}/>) // Navigate to SearchPage
   };
   const handleCartClick = () => {
     navigate('/cart'); // Navigate to CartPage
@@ -29,15 +31,15 @@ const handleWishClick = () => {
             <h1 className="text-3xl text-text font-bold pl-4">BookHaven</h1> 
           </div>
           <div className='flex justify-between'>
-          <input className=" font-bold border-text w-full text-text mr-3 py-1 px-2 leading-tight focus:outline-none" 
+          <input className=" font-bold border-text border-l-8 rounded-full w-full text-text mr-3 py-1 px-2 leading-tight focus:outline-none" 
           type="text" 
           placeholder="Search for Books" 
           aria-label="Search"           
           value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}
           />
-          <SearchIcon className="w-6 h-6" onClick={handleSearch}/>
+          <SearchIcon className="w-8 h-8 pt-2" onClick={handleSearch}/>
           </div>
-          <div className='flex justify-between space-x-8'>
+          <div className='flex justify-between pt-2 text-lg mr-8 space-x-8'>
           <div className='flex justify-between' >
             <UserCircleIcon className="w-6 h-6" />
             <p>ACCOUNT</p>

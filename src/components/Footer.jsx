@@ -6,13 +6,13 @@ import facebookIcon from '../assets/images/FacebookIcon.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-text text-white mt-8 p-4 text-center ">      
+    <footer className="bg-text text-white p-4 text-center ">      
       <div className="w-full mt-8">
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-8'>
           <div>
             <h4 className='mb-8'>BookHaven</h4>
             <p>+ 234 000 000 000</p>
-            <p className='text-underline'>support@easeexplore.com</p>
+            <p className='text-underline'>support@bookhaven.com</p>
           </div>
           <div className='mx-4'>
             <h4 className='font-bold mb-2'>Quick links</h4>

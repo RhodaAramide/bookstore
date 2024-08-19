@@ -14,14 +14,14 @@ const CategorySection = () => {
         navigate('/categories'); // Navigate to PackagePage
     };
   return (
-    <div className='container mx-auto max-h-lg'>
+    <div className='container mx-auto p-8 max-h-lg'>
         {/* <h1 className='text-text text-3xl pb-8 font-bold'>
         Explore our Top Categories
         </h1>      */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full max-h-full gap-4 mt-8 rounded'>
         <div className="relative bg-cover bg-center h-72 object-cover text-white flex justify-center pt-16 rounded" 
             style={{ backgroundImage: `url(${Gig1})` }}>            
-            <p className='absolute text-2xl font-bold bottom-4'>Classic Books</p>
+            <p className='absolute text-2xl font-bold bottom-8'>Classic Books</p>
         </div> 
         <div className='bg-white mx-4 shadow-lg rounded-lg overflow-hidden'>
             <h1 className='text-text text-3xl text-center p-8 mt-8 font-bold'>
@@ -38,19 +38,19 @@ const CategorySection = () => {
             </div>
         <div className="relative bg-cover bg-center h-72 object-cover text-white flex justify-center pt-16 rounded "            
             style={{ backgroundImage: `url(${index1})`  }} >            
-            <p className='absolute text-2xl font-bold bottom-4'> Engineering Books</p>
+            <p className='absolute text-2xl font-bold bottom-8'> Engineering Books</p>
         </div> 
         <div className="relative bg-cover bg-center h-72 object-cover text-white flex justify-center pt-16 rounded" 
             style={{ backgroundImage: `url(${Gig2})` }}>            
-            <p className='absolute text-2xl font-bold bottom-4'>Contemporary Books</p>
+            <p className='absolute text-2xl font-bold bottom-8'>Contemporary Books</p>
         </div> 
         <div className="relative bg-cover bg-center h-72 object-cover text-white flex justify-center pt-16 rounded" 
             style={{ backgroundImage: `url(${Rectangle4})` }}>            
-            <p className='absolute text-2xl font-bold bottom-4'> Management Books</p>
+            <p className='absolute text-2xl font-bold bottom-8'> Management Books</p>
         </div> 
-        <div className="relative bg-cover bg-center h-72 text-white flex justify-center pt-16 rounded" 
+        <div className="relative bg-cover bg-center h-72 text-white flex justify-center mb-8 pt-16 rounded" 
             style={{ backgroundImage: `url(${Gig3})` }}>            
-            <p className='absolute text-2xl font-bold bottom-4'>Science Books</p>
+            <p className='absolute text-2xl font-bold bottom-8'>Science Books</p>
         </div> 
         </div>
     </div>

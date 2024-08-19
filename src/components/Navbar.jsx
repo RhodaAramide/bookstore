@@ -19,18 +19,18 @@ const Navbar = () => {
                   {isOpen ? <XIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
                 </button>
               </div>
-           <div className={`mr-8 md:flex items-center space-x-4 text-#111111 ${isOpen ? 'block' : 'hidden'} md:block`}>
-                <Link to={"/"} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-4 hover:underline hover:text-blue-500 rounded text-sm font-medium">Home</Link>
+           <div className={`mr-8 md:flex items-center space-x-4 font-bold text-md text-#111111 ${isOpen ? 'block' : 'hidden'} md:block`}>
+                <Link to={"/"} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-4 hover:text-blue-500 rounded">Home</Link>
                 <div className="h-6 border border-gray-400"></div>
-                <Link to={"/books"} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-4 hover:underline hover:text-blue-500 rounded text-sm font-medium">Books</Link>
+                <Link to={"/books"} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-4 hover:text-blue-500 rounded">Books</Link>
                 <div className="h-6 border border-gray-400"></div>
-                <Link to={"/categories"} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-4 hover:underline hover:text-blue-500 rounded text-sm font-medium">Categories</Link>
+                <Link to={"/categories"} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-4 hover:text-blue-500 rounded">Categories</Link>
                 <div className="h-6 border border-gray-400"></div>
-                <Link to={"/trending"} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-4 hover:underline hover:text-blue-500 rounded text-sm font-medium">Trending</Link>
+                <Link to={"/trending"} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-4 hover:text-blue-500 rounded">Trending</Link>
                 <div className="h-6 border border-gray-400"></div>
-                <Link to={"/deals"} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-4 hover:underline hover:text-blue-500 rounded text-sm font-medium">Deals</Link>
+                <Link to={"/deals"} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-4 hover:text-blue-500 hover rounded">Deals</Link>
                 <div className="h-6 border border-gray-400"></div>
-                <Link to={"/wishlist"} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-4 hover:underline hover:text-blue-500 rounded text-sm font-medium">Wishlist</Link>
+                <Link to={"/wishlist"} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-4 hover:text-blue-500 rounded">Wishlist</Link>
           </div>           
           </div>        
       </div>

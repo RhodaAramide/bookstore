@@ -44,13 +44,16 @@ const CartSection = () => {
   }
 
   return (
-    <div className='container mx-auto bg-accent'>
-      <h2 className="text-2xl font-bold my-4">My Cart</h2>
+    <div className='bg-accent'>
+      <div className='container mx-auto px-8'>
+      <h2 className="text-2xl font-bold py-4">My Cart</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {cartItems.map(book => (            
           <div key={book.id} className="border p-4 rounded">
-            <img src={book.cover_image} alt={book.title} className="object-cover w-full h-64" />
-            <h3 className="text-lg font-bold">{book.title}</h3>
+            <img src={book.cover_image} alt={book.title} className="object-cover w-full h-96" />
+            <div className='flex justify-center'>
+            <div className='mt-4  text-text font-bold'>
+            <h3 className="text-2xl pb-2 font-bold">{book.title}</h3>
             <p>Author: {book.author}</p>
             <p>Price: ${book.price}</p>
             <div className="flex items-center">
@@ -65,7 +68,7 @@ const CartSection = () => {
               /> 
             </div>
             <p>Total: ${total}</p>
-            <div>
+            <div className='space-x-8 mt-4'>
             <button
               className="px-4 py-2 bg-red-500 text-white rounded mt-2"
               onClick={() => handleRemoveFromCart(book.id)}
@@ -80,8 +83,10 @@ const CartSection = () => {
           </button>
           </div>
           </div>
-          
+          </div>
+          </div>
         ))}
+      </div>
       </div>
     </div>
   );

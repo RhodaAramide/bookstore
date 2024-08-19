@@ -41,7 +41,7 @@ const TrendingBooks = () => {
   };
 
   return (
-    <div className='cobtainer mx-auto bg-accent my-8 p-8'>
+    <div className='bg-[#FCECEC] p-12'>
       <div >
         <div className="flex items-center justify-between mb-4">
         <h2 className="text-3xl font-bold">Trending Books</h2> 

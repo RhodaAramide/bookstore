@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import useFetch from '../useFetch';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import BookCard from './BookCard';
 import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 
 const BookList = () => {
+  const navigate = useNavigate();
   const { data: books, isPending, error } = useFetch();
   // const [Books, setBooks] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,10 +13,9 @@ const BookList = () => {
   const [selectedAuthor, setSelectedAuthor] = useState("");
   const [selectedRating, setSelectedRating] = useState("");
 
-  // useEffect(() => {
-  //   useFetch('http://localhost:8000/users');
-  //   setBooks(books);
-  // }, []);
+  const handleClick = () => { //This function is used to navigate to the previous page
+    navigate(-1);
+  };
 
   if (isPending) { //This is displayed while it is loading
     return <div>Pending...</div>;
@@ -40,6 +40,7 @@ const BookList = () => {
   const handleRatingFilter = (event) => {
     setSelectedRating(event.target.value);
   };
+  
 
   const filteredBooks = books.filter((book) => {
     const matchedTitle = book.title.toLowerCase().includes(searchTerm.toLowerCase());
@@ -49,15 +50,15 @@ const BookList = () => {
 
     return matchedTitle && matchedGenre && matchedAuthor && matchedRating;
   });
-  console.log("Filtered books: ", filteredBooks);
+  
   return (
     <div className="bg-accent text-text mb-8">
       <div className="container mx-auto">
-      <div className='flex justify-between gap-8 py-4 text-primary'>
+      <div className='flex justify-start gap-2 py-4 text-primary' onClick={handleClick}>
             <ArrowCircleLeftIcon className="w-6 h-6" /> 
             <p>Go Back </p>
         </div>
-      <div className="flex justify-between space-x-2">
+      <div className="flex justify-between gap-8 space-x-8">
       <div>
       <h1 className="text-2xl font-bold py-4">Book Listings</h1>
       <div className="font-bold">

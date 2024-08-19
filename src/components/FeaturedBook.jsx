@@ -10,11 +10,11 @@ const FeaturedBook = () => {
     navigate('/books'); // Navigate to books
   };
   return (
-    <>
+    <div className="bg-gradient-to-r from-[#FBEEEE] to-[#F7FFFE] mb-8">
     <div>
         
     </div>
-    <div className='my-6 flex justify-center'>
+    <div className='mb-6 p-8 flex justify-center'>
     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 max-w-">
     <img src={book_img} alt="book" className="object-cover w-full max-w-md" />
     <div className='font-bold pt-8 mt-8 max-w-lg'>
@@ -43,8 +43,9 @@ const FeaturedBook = () => {
       
       
     </div>
-  </div></div>
-  </>
+  </div>
+  </div>
+  </div>
   )
 }
 
