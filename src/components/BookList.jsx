@@ -53,11 +53,11 @@ const BookList = () => {
   return (
     <div className="bg-accent text-text mb-8">
       <div className="container mx-auto">
-      <div className='flex justify-start space-x-2 py-4 text-primary'>
+      <div className='flex justify-between gap-8 py-4 text-primary'>
             <ArrowCircleLeftIcon className="w-6 h-6" /> 
             <p>Go Back </p>
         </div>
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
+      <div className="flex justify-between space-x-2">
       <div>
       <h1 className="text-2xl font-bold py-4">Book Listings</h1>
       <div className="font-bold">
@@ -72,18 +72,23 @@ const BookList = () => {
         <select id="genre" value={selectedGenre} onChange={handleGenreFilter}>
           <option value="">All Genres</option>
           <option value="Fantasy">Fantasy</option>
-          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Science Fiction">Sc-Fi</option>
           <option value="Mystery">Mystery</option>
           <option value="Romance">Romance</option>
+          <option value="Historical Fiction">Historical Fiction</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Biography">Biography</option>
         </select>
       </div>
       <div>
         <label htmlFor="author">Author:</label>
         <select id="author" value={selectedAuthor} onChange={handleAuthorFilter}>
           <option value="">All Authors</option>
-          <option value="Author 1">Author 1</option>
-          <option value="Author 2">Author 2</option>
-          <option value="Author 3">Author 3</option>
+          <option value="Norah Wittier">Norah Wittier</option>
+          <option value="Krista Sandyford">Krista Sandyford</option>
+          <option value="Guilbert Lortzing">Guilbert Lortzing</option>
+          <option value="Marc Nemchin">Marc Nemchino</option>
+          <option value="Ellis Stennes">Ellis Stennes</option>
         </select>
       </div>
       <div>

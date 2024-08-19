@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const CartSection = () => {
   const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate(); // Initialize useNavigate
   
 
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -33,14 +35,17 @@ const CartSection = () => {
     const updatedCart = cartItems.filter(item => item.id !== id);
     setCartItems(updatedCart);
   };
+  const handleCartCheckout = () => {
+    navigate('/checkout');
+  };
 
   if (cartItems.length === 0) {
     return <div>Your shopping cart is empty.</div>;
   }
 
   return (
-    <div>
-      <h2 className="text-2xl font-bold mb-4">Shopping Cart</h2>
+    <div className='container mx-auto bg-accent'>
+      <h2 className="text-2xl font-bold my-4">My Cart</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {cartItems.map(book => (            
           <div key={book.id} className="border p-4 rounded">
@@ -60,13 +65,22 @@ const CartSection = () => {
               /> 
             </div>
             <p>Total: ${total}</p>
+            <div>
             <button
               className="px-4 py-2 bg-red-500 text-white rounded mt-2"
               onClick={() => handleRemoveFromCart(book.id)}
             >
               Remove
             </button>
+            <button
+            className="px-4 py-2 bg-text text-white rounded mt-2"
+            onClick={() => handleCartCheckout(book)}
+          >
+            Order
+          </button>
           </div>
+          </div>
+          
         ))}
       </div>
     </div>

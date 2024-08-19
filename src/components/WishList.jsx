@@ -23,12 +23,12 @@ const WishList = () => {
   }
 
   return (
-    <div>
-      <h2 className="text-2xl font-bold mb-4">Wishlist</h2>
+    <div className='container mx-auto bg-accent'>
+      <h2 className="text-2xl font-bold my-4">Wishlist</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {wishlistItems.map(book => (
           <div key={book.id} className="border p-4 rounded">
-            <img src={book.cover_image} alt={book.title} className="object-cover w-full h-64" />
+            <img src={book.cover_image} alt={book.title} className="object-cover w-full h-96" />
             <h3 className="text-lg font-bold">{book.title}</h3>
             <p>Author: {book.author}</p>
             <p>Genre: {book.genre}</p>

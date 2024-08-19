@@ -5,6 +5,14 @@ import { useNavigate } from 'react-router-dom';
 
 const SearchBar = () => {
   const navigate = useNavigate(); // Initialize useNavigate
+  const [searchTerm, setSearchTerm] = React.useState('');
+
+  // const handleSearch = (event) => {
+  //   setSearchTerm(event.target.value);
+  // };
+  const handleSearch = (event) => {
+    navigate(`/books`); // Navigate to SearchPage
+  };
   const handleCartClick = () => {
     navigate('/cart'); // Navigate to CartPage
 };
@@ -14,19 +22,20 @@ const handleWishClick = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="bg-white">
+      <div className="bg-white py-2">
         <div className="flex justify-between border-b border-background py-2">
           <div className='flex justify-between'>
             <img src={samplelogo} alt="logo" className="w-10 h-10" />
             <h1 className="text-3xl text-text font-bold pl-4">BookHaven</h1> 
           </div>
           <div className='flex justify-between'>
-          <input className="appearance-none bg-transparent border-text w-full text-text mr-3 py-1 px-2 leading-tight focus:outline-none" 
+          <input className=" font-bold border-text w-full text-text mr-3 py-1 px-2 leading-tight focus:outline-none" 
           type="text" 
-          placeholder="Search for books" 
+          placeholder="Search for Books" 
           aria-label="Search"           
+          value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}
           />
-          <SearchIcon className="w-6 h-6" />
+          <SearchIcon className="w-6 h-6" onClick={handleSearch}/>
           </div>
           <div className='flex justify-between space-x-8'>
           <div className='flex justify-between' >

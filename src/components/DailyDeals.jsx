@@ -82,7 +82,7 @@ const DailyDeals = () => {
   };
   return (
     <div className='mb-8'>
-      <h2 className="ml-4 text-2xl font-bold mb-4">Daily Deals</h2>
+      {/* <h2 className="ml-4 text-2xl font-bold mb-4">Daily Deals</h2> */}
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 bg-[#FCEBEA]">    
       <div className="p-16 font-bold">
         <h2 className="text-7xl font-bold pb-2">Today's Deal!</h2>

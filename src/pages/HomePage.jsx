@@ -7,6 +7,7 @@ import TrendingBooks from '../components/TrendingBooks';
 import DailyDeals from '../components/DailyDeals';
 import Footer from '../components/Footer';
 import Newsletter from '../components/Newsletter';
+import FeaturedBook from '../components/FeaturedBook';
 
 
 
@@ -21,6 +22,7 @@ const HomePage = () => {
       
       <CategorySection />
       <TrendingBooks />
+      <FeaturedBook />
       <DailyDeals />
       <Newsletter />
     </div>

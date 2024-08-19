@@ -68,7 +68,7 @@ const BookDetails = () => {
           </div>
       <h2 className="text-2xl font-bold mb-4 ml-8">{selectedBook.title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
-        <img src={selectedBook.cover_image} alt={selectedBook.title} className="object-cover w-full h-lvh" />
+        <img src={selectedBook.cover_image} alt={selectedBook.title} className="object-cover w-full max-w-md" />
         <div>
           <p className="mb-4">{selectedBook.plot_summary}</p>
           <p>Author: <span className="font-bold">{selectedBook.author}</span></p>
