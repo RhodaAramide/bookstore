@@ -81,7 +81,7 @@ const DailyDeals = () => {
     }, 100);
   };
   return (
-    <div className='mb-8 mt-8 pt-8 bg-white'>
+    <div id="deals" className='mb-8 mt-8 pt-8 bg-white'>
       {/* <h2 className="ml-4 text-2xl font-bold mb-4">Daily Deals</h2> */}
       <div className='flex justify-center'>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 bg-[#FCEBEA]">    

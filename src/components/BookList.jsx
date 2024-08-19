@@ -54,23 +54,27 @@ const BookList = () => {
   return (
     <div className="bg-accent text-text mb-8">
       <div className="container mx-auto">
-      <div className='flex justify-start gap-2 py-4 text-primary' onClick={handleClick}>
+      <div className='flex justify-start gap-2 pt-4 text-primary' onClick={handleClick}>
             <ArrowCircleLeftIcon className="w-6 h-6" /> 
             <p>Go Back </p>
         </div>
       <div className="flex justify-between gap-8 space-x-8">
       <div>
-      <h1 className="text-2xl font-bold py-4">Book Listings</h1>
-      <div className="font-bold">
+      <h1 className="text-3xl font-bold py-4">Book Listings</h1>
+      <hr className="h-0.5 w-42 mb-8 bg-primary border-0 dark:bg-gray-700"></hr>
+      <div className="text-lg font-bold">
       <div>
-        <label htmlFor="title">Title:</label>
+        <label htmlFor="title" className="">Title:</label>
         <input type="text" 
         placeholder="Search by title" 
+        className="p-2 rounded-lg w-full"
         value={searchTerm} onChange={handleSearch} />
       </div>
       <div className="py-2">
         <label htmlFor="genre" className="pr-2">Genre:</label>
-        <select id="genre" value={selectedGenre} onChange={handleGenreFilter}>
+        <select id="genre" value={selectedGenre}
+          className="p-0.5 rounded-lg"
+          onChange={handleGenreFilter}>
           <option value="">All Genres</option>
           <option value="Fantasy">Fantasy</option>
           <option value="Science Fiction">Sc-Fi</option>
@@ -81,9 +85,11 @@ const BookList = () => {
           <option value="Biography">Biography</option>
         </select>
       </div>
-      <div>
-        <label htmlFor="author">Author:</label>
-        <select id="author" value={selectedAuthor} onChange={handleAuthorFilter}>
+      <div className="py-2">
+        <label htmlFor="author" className="pr-2">Author:</label>
+        <select id="author" value={selectedAuthor} 
+          className="p-0.5 rounded-lg"
+          onChange={handleAuthorFilter}>
           <option value="">All Authors</option>
           <option value="Norah Wittier">Norah Wittier</option>
           <option value="Krista Sandyford">Krista Sandyford</option>
@@ -92,9 +98,11 @@ const BookList = () => {
           <option value="Ellis Stennes">Ellis Stennes</option>
         </select>
       </div>
-      <div>
-        <label htmlFor="rating">Rating:</label>
-        <select id="rating" value={selectedRating} onChange={handleRatingFilter}>
+      <div className="py-2">
+        <label htmlFor="rating" className="pr-2">Rating:</label>
+        <select id="rating" value={selectedRating} 
+          className="p-2 rounded-lg"
+          onChange={handleRatingFilter}>
           <option value="">All Ratings</option>
           <option value="1">1+</option>
           <option value="2">2+</option>
@@ -105,7 +113,7 @@ const BookList = () => {
       </div>
       </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 pt-8">
         {filteredBooks.map((book) => (  
         <div key={book.id}>             
             <BookCard book={book}/>          

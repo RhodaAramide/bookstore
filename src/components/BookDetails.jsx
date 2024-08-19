@@ -46,7 +46,9 @@ const BookDetails = () => {
       author: selectedBook.author,
       genre: selectedBook.genre,
       cover_image: selectedBook.cover_image,
-      price: selectedBook.price
+      price: selectedBook.price,
+      rating: selectedBook.rating,
+      plot_summary: selectedBook.plot_summary
     };
     // Add the product to the wishlist items array
     

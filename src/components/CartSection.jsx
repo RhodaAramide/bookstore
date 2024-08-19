@@ -45,23 +45,25 @@ const CartSection = () => {
 
   return (
     <div className='bg-accent'>
-      <div className='container mx-auto px-8'>
-      <h2 className="text-2xl font-bold py-4">My Cart</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className='container mx-auto  px-8'>
+      <h2 className="text-3xl font-bold py-4">My Cart</h2>
+      <hr className="h-0.5 w-42 mb-8 bg-primary border-0 dark:bg-gray-700"></hr>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        
         {cartItems.map(book => (            
-          <div key={book.id} className="border p-4 rounded">
-            <img src={book.cover_image} alt={book.title} className="object-cover w-full h-96" />
-            <div className='flex justify-center'>
+          <div key={book.id} className="flex justify-between border mb-8 bg-white p-4 rounded-lg">
+            <img src={book.cover_image} alt={book.title} className="object-cover max-w-md" />
+            <div className='flex justify-center mt-8'>
             <div className='mt-4  text-text font-bold'>
             <h3 className="text-2xl pb-2 font-bold">{book.title}</h3>
-            <p>Author: {book.author}</p>
-            <p>Price: ${book.price}</p>
-            <div className="flex items-center">
+            <p className='text-lg'>Author: {book.author}</p>
+            <p className='text-lg'>Price: ${book.price}</p>
+            <div className="flex items-center py-4">
               <label htmlFor={`quantity-${book.id}`} className="mr-2">Quantity:</label>
               <input
                 type="number"
                 id={`quantity-${book.id}`}
-                className="border rounded p-2 w-16"
+                className="border-text border rounded p-2 w-24"
                 min={1}
                 value={book.quantity}
                 onChange={(e) => handleUpdateQuantity(book.id, e.target.value)}
