@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from '../useFetch';
 import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 import Navbar from './Navbar';
 import Footer from './Footer';
+;
 
 
 const BookDetails = () => {
   const { id } = useParams(); // Get the book id from the route params
   const { data: books } = useFetch();
+  const navigate = useNavigate();
+
+  const handleClick = () => { //This function is used to navigate to the previous page
+    navigate(-1);
+  };
    
   // const [selectedBook, setSelectedBook] = useState(null);
 
@@ -17,8 +23,7 @@ const BookDetails = () => {
   if (!selectedBook) {
     return <div>Book not found.</div>
   }
-
-  
+    
   const handleAddToCart = (selectedBook) => {
     // Get existing cart items from local storage or initialize an empty array
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -64,14 +69,15 @@ const BookDetails = () => {
     <div>
       <Navbar />
       <div className='container mx-auto'>
-      <div className='flex justify-start space-x-2 py-4 text-primary'>
+      <div className='flex justify-start gap-2 pt-4 text-primary' onClick={handleClick}>
             <ArrowCircleLeftIcon className="w-6 h-6" /> 
             <p>Go Back </p>
-          </div>
-      <h2 className="text-2xl font-bold mb-4 ml-8">{selectedBook.title}</h2>
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
-        <img src={selectedBook.cover_image} alt={selectedBook.title} className="object-cover w-full max-w-md" />
-        <div>
+        </div>
+      <h2 className="text-3xl font-bold mb-4 ml-8">{selectedBook.title}</h2>
+      <hr className="h-0.5 w-42 ml-8 bg-primary border-0 dark:bg-gray-700"></hr>
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 items-center max-w-4xl">
+        <img src={selectedBook.cover_image} alt={selectedBook.title} className="object-cover max-w-sm" />
+        <div className='text-text font-semibold'>
           <p className="mb-4">{selectedBook.plot_summary}</p>
           <p>Author: <span className="font-bold">{selectedBook.author}</span></p>
           <p>Price: ${selectedBook.price}</p>
@@ -92,8 +98,9 @@ const BookDetails = () => {
           </button>
         </div>
       </div>
-      <Footer />
+      
     </div>
+    <Footer />
     </div>
   );
 }

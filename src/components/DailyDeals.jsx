@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // import useFetch from '../useFetch';
-import Unsplash from '../assets/images/Unsplash.svg';
+
 
 const DailyDeals = () => {
   // const { data: books, isPending, error } = useFetch('http://localhost:8000/books');
@@ -112,25 +112,11 @@ const DailyDeals = () => {
          <p className="text-black text-xl mt-8">Don't miss such a deal!</p>
       </div>
       <div className='my-8 mr-8'>
-        <img src={Unsplash} alt="daily_deals" className="object-cover max-w-md" />        
+        <img src="https://res.cloudinary.com/dzckxcrwj/image/upload/f_auto,q_auto/sstxnvluwkwybixbpdqh" 
+        alt="daily_deals" className="object-cover max-w-md" />        
       </div>
       </div>
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {dailyDeals.map(book => (
-          <div key={book.id} className="border p-4 rounded">
-            <img src={book.cover_image} alt={book.title} className="object-cover w-full h-64" />
-            <h3 className="text-lg font-bold">{book.title}</h3>
-            <p>Author: {book.author}</p>
-            {book.discount && (
-              <p className="text-red-500 mb-2">Discount: {book.discount}% off</p>
-            )}
-            {book.specialOffer && (
-              <p className="text-green-500 mb-2">Special Offer: {book.specialOffer}</p>
-            )}
-            <p>Price: ${book.price}</p>
-          </div>
-        ))}
-      </div> */}
+      
     </div>
     </div>
   );

@@ -5,7 +5,7 @@ import BookCard from './BookCard';
 import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 
 const BookList = () => {
-  const navigate = useNavigate();
+  
   const { data: books, isPending, error } = useFetch();
   // const [Books, setBooks] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -13,6 +13,7 @@ const BookList = () => {
   const [selectedAuthor, setSelectedAuthor] = useState("");
   const [selectedRating, setSelectedRating] = useState("");
 
+  const navigate = useNavigate();
   const handleClick = () => { //This function is used to navigate to the previous page
     navigate(-1);
   };

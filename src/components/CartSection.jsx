@@ -6,6 +6,10 @@ const CartSection = () => {
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate(); // Initialize useNavigate
   
+  
+  const handleClick = () => { //This function is used to navigate to the previous page
+    navigate(-1);
+  };
 
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
@@ -46,9 +50,13 @@ const CartSection = () => {
   return (
     <div className='bg-accent'>
       <div className='container mx-auto  px-8'>
+      <div className='flex justify-start gap-2 pt-4 text-primary' onClick={handleClick}>
+            <ArrowCircleLeftIcon className="w-6 h-6" /> 
+            <p>Go Back </p>
+        </div>
       <h2 className="text-3xl font-bold py-4">My Cart</h2>
       <hr className="h-0.5 w-42 mb-8 bg-primary border-0 dark:bg-gray-700"></hr>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
         
         {cartItems.map(book => (            
           <div key={book.id} className="flex justify-between border mb-8 bg-white p-4 rounded-lg">
@@ -64,12 +72,13 @@ const CartSection = () => {
                 type="number"
                 id={`quantity-${book.id}`}
                 className="border-text border rounded p-2 w-24"
+                required
                 min={1}
                 value={book.quantity}
                 onChange={(e) => handleUpdateQuantity(book.id, e.target.value)}
               /> 
             </div>
-            <p>Total: ${total}</p>
+            <p>Total: ${!total ? "0" : total} </p>
             <div className='space-x-8 mt-4'>
             <button
               className="px-4 py-2 bg-red-500 text-white rounded mt-2"

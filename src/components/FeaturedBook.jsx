@@ -1,5 +1,4 @@
 import React from 'react'
-import book_img from '../assets/images/book.svg';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
@@ -16,7 +15,8 @@ const FeaturedBook = () => {
     </div>
     <div className='mb-6 p-8 flex justify-center'>
     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 max-w-">
-    <img src={book_img} alt="book" className="object-cover w-full max-w-md" />
+    <img src='https://res.cloudinary.com/dzckxcrwj/image/upload/f_auto,q_auto/kydspx3t3ohxnzcqpd5i'
+     alt="book" className="object-cover w-full max-w-md" />
     <div className='font-bold pt-8 mt-8 max-w-lg'>
         <h1 className='text-3xl font-bold mt-8 mb-8'>Featured Book</h1>
         <hr className="h-px w-24 bg-primary border-0 dark:bg-gray-700"></hr>

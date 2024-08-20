@@ -1,10 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import Gig2 from '../assets/images/Gig2.svg';
-import Gig1 from '../assets/images/Gig1.svg';
-import Gig3 from '../assets/images/Gig3.svg';
-import Rectangle4 from '../assets/images/Rectangle4.svg';
-import index1 from '../assets/images/index1.svg';
+
 
 
 const CategorySection = () => {
@@ -20,7 +16,7 @@ const CategorySection = () => {
         </h1>      */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full max-h-full gap-4 mt-8 rounded'>
         <div className="relative bg-cover bg-center h-72 object-cover text-white flex justify-center pt-16 rounded" 
-            style={{ backgroundImage: `url(${Gig1})` }}>            
+            style={{ backgroundImage: `url("https://res.cloudinary.com/dzckxcrwj/image/upload/f_auto,q_auto/tkxklzrcs130qncogkky")` }}>            
             <p className='absolute text-2xl font-bold bottom-8'>Classic Books</p>
         </div> 
         <div className='bg-white mx-4 shadow-lg rounded-lg overflow-hidden'>
@@ -37,19 +33,19 @@ const CategorySection = () => {
             </div>
             </div>
         <div className="relative bg-cover bg-center h-72 object-cover text-white flex justify-center pt-16 rounded "            
-            style={{ backgroundImage: `url(${index1})`  }} >            
+            style={{ backgroundImage: `url("https://res.cloudinary.com/dzckxcrwj/image/upload/f_auto,q_auto/f5fzpxtoqtnbjsoodgfs")`  }} >            
             <p className='absolute text-2xl font-bold bottom-8'> Engineering Books</p>
         </div> 
         <div className="relative bg-cover bg-center h-72 object-cover text-white flex justify-center pt-16 rounded" 
-            style={{ backgroundImage: `url(${Gig2})` }}>            
+            style={{ backgroundImage: `url("https://res.cloudinary.com/dzckxcrwj/image/upload/f_auto,q_auto/eyvbv8lw7nzdiptjk8pw")` }}>            
             <p className='absolute text-2xl font-bold bottom-8'>Contemporary Books</p>
         </div> 
         <div className="relative bg-cover bg-center h-72 object-cover text-white flex justify-center pt-16 rounded" 
-            style={{ backgroundImage: `url(${Rectangle4})` }}>            
+            style={{ backgroundImage: `url("https://res.cloudinary.com/dzckxcrwj/image/upload/f_auto,q_auto/oy4koyaxzamzvuzbew93")` }}>            
             <p className='absolute text-2xl font-bold bottom-8'> Management Books</p>
         </div> 
         <div className="relative bg-cover bg-center h-72 text-white flex justify-center mb-8 pt-16 rounded" 
-            style={{ backgroundImage: `url(${Gig3})` }}>            
+            style={{ backgroundImage: `url("https://res.cloudinary.com/dzckxcrwj/image/upload/f_auto,q_auto/z2elz91uolq41si2ad3s")` }}>            
             <p className='absolute text-2xl font-bold bottom-8'>Science Books</p>
         </div> 
         </div>

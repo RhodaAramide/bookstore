@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BookCard from './BookCard';
 import useFetch from '../useFetch';
+import { useNavigate } from 'react-router-dom';
 import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 
 
@@ -8,6 +9,10 @@ const Categories = () => {
   const { data: books } = useFetch();
   const [selectedCategory, setSelectedCategory] = useState('');
   
+  const navigate = useNavigate();
+  const handleClick = () => { //This function is used to navigate to the previous page
+    navigate(-1);
+  };
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
@@ -24,10 +29,10 @@ const Categories = () => {
 
         </div>
         <div className="">
-          <div className='flex justify-start space-x-2 py-4 text-primary'>
+        <div className='flex justify-start gap-2 pt-4 text-primary' onClick={handleClick}>
             <ArrowCircleLeftIcon className="w-6 h-6" /> 
             <p>Go Back </p>
-          </div>
+        </div>
             <h1 className="font-bold text-text text-2xl">
               CATEGORIES
             </h1>
