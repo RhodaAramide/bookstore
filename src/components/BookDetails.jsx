@@ -75,14 +75,19 @@ const BookDetails = () => {
         </div>
       <h2 className="text-3xl font-bold mb-4 ml-8">{selectedBook.title}</h2>
       <hr className="h-0.5 w-42 ml-8 bg-primary border-0 dark:bg-gray-700"></hr>
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 items-center max-w-4xl">
-        <img src={selectedBook.cover_image} alt={selectedBook.title} className="object-cover max-w-sm" />
-        <div className='text-text font-semibold'>
-          <p className="mb-4">{selectedBook.plot_summary}</p>
-          <p>Author: <span className="font-bold">{selectedBook.author}</span></p>
-          <p>Price: ${selectedBook.price}</p>
-          <p>Genre: {selectedBook.genre}</p>
-          <p className='mb-4'>Rating: {selectedBook.rating}</p>
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 mb-8 pb-16 items-center max-w-3xl">
+        <img src={selectedBook.cover_image} alt={selectedBook.title} className="object-cover max-w-5xl" />
+        <div className='text-text'>
+          <p className='text-primary text-lg font-bold py-2'>Plot Summary</p>
+          <p className="mb-2">{selectedBook.plot_summary}</p>
+          <p className='text-primary text-lg font-bold'>Author: 
+            <span className=" text-text pl-2">{selectedBook.author}</span></p>
+          <p className='text-primary text-lg font-bold'>Price: 
+          <span className=" text-text pl-2">${selectedBook.price}</span></p>
+          <p className='text-primary text-lg font-bold'>Genre: 
+          <span className=" text-text pl-2">{selectedBook.genre}</span></p>
+          <p className='text-primary text-lg font-bold mb-4'>Rating: 
+          <span className=" text-text pl-2">{selectedBook.rating}</span></p>
 
           <button
             className="px-4 py-2 bg-blue-500 text-white rounded"

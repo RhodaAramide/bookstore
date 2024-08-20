@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 
 
 const CartSection = () => {
@@ -34,13 +35,14 @@ const CartSection = () => {
 
   // Function to handle removing a book from the cart
   const handleRemoveFromCart = (id) => {
-    removeFromCart(id);
+    // removeFromCart(id);
     // Update the cart state after removing the book
     const updatedCart = cartItems.filter(item => item.id !== id);
     setCartItems(updatedCart);
   };
   const handleCartCheckout = () => {
-    navigate('/checkout');
+    return <div>Order has been placed successfully.</div>
+    // navigate('/checkout');
   };
 
   if (cartItems.length === 0) {
@@ -60,7 +62,7 @@ const CartSection = () => {
         
         {cartItems.map(book => (            
           <div key={book.id} className="flex justify-between border mb-8 bg-white p-4 rounded-lg">
-            <img src={book.cover_image} alt={book.title} className="object-cover max-w-md" />
+            <img src={book.cover_image} alt={book.title} className="object-cover max-w-sm" />
             <div className='flex justify-center mt-8'>
             <div className='mt-4  text-text font-bold'>
             <h3 className="text-2xl pb-2 font-bold">{book.title}</h3>

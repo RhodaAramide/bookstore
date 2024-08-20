@@ -27,7 +27,7 @@ const WishList = () => {
       <div className='container mx-auto'>
       <h2 className="text-3xl font-bold py-4"> My Wishlist</h2>
       <hr className="h-0.5 w-42 mb-8 bg-primary border-0 dark:bg-gray-700"></hr>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
         {wishlistItems.map(book => (
            <div key={book.id} className="flex justify-between border mb-8 bg-white p-4 rounded-lg">
            <img src={book.cover_image} alt={book.title} className="object-cover max-w-md" />
