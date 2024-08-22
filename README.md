@@ -48,6 +48,9 @@ Open your web browser and visit http://localhost:3000 to view the Bookstore Webs
 - CSS: The styling language for designing the website's appearance.
 - Tailwind CSS: A utility-first CSS framework for rapid UI development.
 
+### Deployed Link
+https://bookstore-prjt.onrender.com/
+
 ### Contributing
 Contributions are welcome! To contribute to the Bookstore Website, follow these steps:
 1. Fork the project repository.
