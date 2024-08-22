@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import BookCard from './BookCard';
-import useFetch from '../useFetch';
+import books from '../data/mockData.json';
 import { useNavigate } from 'react-router-dom';
 import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 
 
-const Categories = () => {
-  const { data: books } = useFetch();
+const Categories = (props) => {
+  const {data} = props;
   const [selectedCategory, setSelectedCategory] = useState('');
   
   const navigate = useNavigate();
@@ -19,8 +19,8 @@ const Categories = () => {
   };
 
    const filteredBooks = selectedCategory
-    ? books.filter((book) => book.category === selectedCategory)
-    : books;
+    ? data.books.filter((book) => book.category === selectedCategory)
+    : data.books;
 
   return (
     <section className="bg-accent mb-8">

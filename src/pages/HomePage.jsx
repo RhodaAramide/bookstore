@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import Newsletter from '../components/Newsletter';
 import FeaturedBook from '../components/FeaturedBook';
 import Articles from '../components/Articles';
+import data from '../data/mockData.json';
 
 
 
@@ -17,9 +18,9 @@ const HomePage = () => {
     <Navbar />       
     <Header />    
     <CategorySection />
-    <TrendingBooks />
+    <TrendingBooks data={data}/>
     <FeaturedBook />
-    <DailyDeals />
+    <DailyDeals data={data}/>
     <Newsletter />
     <Articles />
     <Footer />

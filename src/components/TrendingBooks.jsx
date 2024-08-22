@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import useFetch from '../useFetch';
+
 import { orderBy } from 'lodash';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import BookCard from './BookCard';
 
-const TrendingBooks = () => {
-  const { data: books} = useFetch();
-  const sortedBooks = orderBy(books, 'popularity', 'desc'); // Sort the books array
+const TrendingBooks = (props) => {
+  const {data} = props;
+  const sortedBooks = orderBy(data.books, 'popularity', 'desc'); // Sort the books array
   const navigate = useNavigate(); // Initialize useNavigate
 
   const handleView = () => {

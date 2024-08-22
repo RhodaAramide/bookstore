@@ -7,18 +7,25 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const Navbar = () => {
   const navigate = useNavigate(); // Initialize useNavigate
-  const [searchTerm, setSearchTerm] = React.useState('');
+  const [title, setTitle] = useState("");
   const [isOpen, setIsOpen] = useState(false); 
 
   const toggleMenu = () => { //This handles the toggle menu for the hamburger icon
     setIsOpen(!isOpen);
   }
-  // const handleSearch = (event) => {
-  //   setSearchTerm(event.target.value);
-  // };
+ 
+
   const handleSearch = () => {
-    navigate('/books');
-    // navigate(<BookList {...searchTerm}/>) // Navigate to SearchPage
+    // Create a query object based on non-empty search inputs
+    const query = {};
+
+    if (title) query.title = title; 
+
+    // Convert the query object to a query string
+    const queryString = new URLSearchParams(query).toString();
+
+    // Navigate to the search results page with the query string
+    navigate(`/search-results?${queryString}`);
   };
   const handleCartClick = () => {
     navigate('/cart'); // Navigate to CartPage
@@ -60,9 +67,9 @@ const handleWishClick = () => {
           <div className="relative mr-2">
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="Search books by title..."
               className="pl-8 pr-4 py-2 text-text border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-              value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}
+              value={title} onChange={(event) => setTitle(event.target.value)}
             />
             <svg
               className="absolute right-3 top-2.5 h-5 w-5 text-gray-400"

@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import useFetch from '../useFetch';
+import { useParams, useNavigate, json } from 'react-router-dom';
+import { books } from '../data/mockData.json';
 import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 import Navbar from './Navbar';
 import Footer from './Footer';
-;
+
 
 
 const BookDetails = () => {
+  
+  const [booksData, setbooks] = useState(books);
   const { id } = useParams(); // Get the book id from the route params
-  const { data: books } = useFetch();
+  
   const navigate = useNavigate();
 
   const handleClick = () => { //This function is used to navigate to the previous page
@@ -18,7 +20,7 @@ const BookDetails = () => {
    
   // const [selectedBook, setSelectedBook] = useState(null);
 
-  const selectedBook = books.find(book => book.id === parseInt(id));
+  const selectedBook = booksData.find(book => book.id === parseInt(id));
 
   if (!selectedBook) {
     return <div>Book not found.</div>
@@ -53,7 +55,7 @@ const BookDetails = () => {
       cover_image: selectedBook.cover_image,
       price: selectedBook.price,
       rating: selectedBook.rating,
-      plot_summary: selectedBook.plot_summary
+      // plot_summary: selectedBook.plot_summary
     };
     // Add the product to the wishlist items array
     

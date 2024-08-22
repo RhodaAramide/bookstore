@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
-import useFetch from '../useFetch';
+import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import BookCard from './BookCard';
 import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 
-const BookList = () => {
-  
-  const { data: books, isPending, error } = useFetch();
-  // const [Books, setBooks] = useState([]);
+const BookList = (props) => {
+  const {data} = props;
+  // const [isPending, setIsPending] = useState(true);
+  // const [booksData, setBooks] = useState(books);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedAuthor, setSelectedAuthor] = useState("");
@@ -18,13 +17,13 @@ const BookList = () => {
     navigate(-1);
   };
 
-  if (isPending) { //This is displayed while it is loading
-    return <div>Pending...</div>;
-  }
+  // if (isPending) { //This is displayed while it is loading
+  //   return <div>Pending...</div>;
+  // }
 
-  if (error) {  //This displays the error if encountered
-    return <div>{error}</div>;
-  }
+  // if (error) {  //This displays the error if encountered
+  //   return <div>{error}</div>;
+  // }
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -43,7 +42,7 @@ const BookList = () => {
   };
   
 
-  const filteredBooks = books.filter((book) => {
+  const filteredBooks = data.books.filter((book) => {
     const matchedTitle = book.title.toLowerCase().includes(searchTerm.toLowerCase());
     const matchedGenre = selectedGenre === "" || book.genre === selectedGenre;
     const matchedAuthor = selectedAuthor === "" || book.author === selectedAuthor;
@@ -55,7 +54,7 @@ const BookList = () => {
   return (
     <div className="bg-accent text-text mb-8">
       <div className="container mx-auto">
-      <div className='flex justify-start gap-2 pt-4 text-primary' onClick={handleClick}>
+      <div className='flex justify-start gap-2 pt-4 text-primary cursor-pointer' onClick={handleClick}>
             <ArrowCircleLeftIcon className="w-6 h-6" /> 
             <p>Go Back </p>
         </div>

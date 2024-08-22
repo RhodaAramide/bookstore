@@ -1,38 +1,27 @@
 import React, { useState, useEffect } from 'react';
-// import useFetch from '../useFetch';
+import books from '../data/mockData.json';
 
 
-const DailyDeals = () => {
-  // const { data: books, isPending, error } = useFetch('http://localhost:8000/books');
-
+const DailyDeals = (props) => {
+  const {data} = props;
   const [books, setBooks] = useState([]);
   const [currentOfferIndex, setCurrentOfferIndex] = useState(0);
   const [displayedTitle, setDisplayedTitle] = useState('');
   const [displayedOffer, setDisplayedOffer] = useState('');
 
+  
   useEffect(() => {
-    // Simulate asynchronous data fetching
-    fetchBooks()
-      .then((fetchedBooks) => {
-        setBooks(fetchedBooks);
-      })
-      .catch((error) => {
-        console.error('Error fetching books:', error);
-      });
-  }, []);
-
-  useEffect(() => {
-    if (books.length > 0) {
+    if (data.books.length > 0) {
       const typingTimeout = setTimeout(() => {
-        const titleToType = books[currentOfferIndex].title;
-        const offerToType = books[currentOfferIndex].specialOffer;
+        const titleToType = data.books[currentOfferIndex].title;
+        const offerToType = data.books[currentOfferIndex].specialOffer;
 
         typeInTitle(titleToType);
         typeInOffer(offerToType);
       }, 1000);
 
       const rotationTimeout = setTimeout(() => {
-        setCurrentOfferIndex((prevIndex) => (prevIndex + 1) % books.length);
+        setCurrentOfferIndex((prevIndex) => (prevIndex + 1) % data.books.length);
       }, 5000);
 
       return () => {
@@ -40,18 +29,9 @@ const DailyDeals = () => {
         clearTimeout(rotationTimeout);
       };
     }
-  }, [books, currentOfferIndex]);
+  }, [data.books, currentOfferIndex]);
 
-  const fetchBooks = async () => {
-    try {
-      // Replace with your actual data fetching logic
-      const response = await fetch('http://localhost:8000/books');
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      throw new Error('Error fetching books');
-    }
-  };
+  
 
   const typeInTitle = (title) => {
     const length = title.length;

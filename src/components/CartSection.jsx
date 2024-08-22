@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useAppContext } from "../AppContext";
 import { useNavigate } from 'react-router-dom';
 import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 
 
 const CartSection = () => {
   const [cartItems, setCartItems] = useState([]);
+  const { cartCount, setCartCount } = useAppContext(); // Access cartCount from context
   const navigate = useNavigate(); // Initialize useNavigate
   
   
@@ -17,7 +19,9 @@ const CartSection = () => {
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
     setCartItems(storedCart);
-  }, []);
+    setCartCount(storedCart.length);
+   ;
+  }, [setCartCount]);
 
 
   // Function to handle updating the quantity of a book in the cart
@@ -31,6 +35,8 @@ const CartSection = () => {
       return item;
     });
     setCartItems(updatedCart);
+    localStorage.setItem('cartItems', JSON.stringify(updatedCart)); // Update localStorage
+    setCartCount(updatedCart.length); // Update cart count
   };
 
   // Function to handle removing a book from the cart
@@ -39,14 +45,17 @@ const CartSection = () => {
     // Update the cart state after removing the book
     const updatedCart = cartItems.filter(item => item.id !== id);
     setCartItems(updatedCart);
+    localStorage.setItem('cartItems', JSON.stringify(updatedCart)); // Update localStorage
+    setCartCount(updatedCart.length); // Update cart count
   };
+  
   const handleCartCheckout = () => {
-    return <div>Order has been placed successfully.</div>
+    alert("Order has been placed successfully.")
     // navigate('/checkout');
   };
 
   if (cartItems.length === 0) {
-    return <div>Your shopping cart is empty.</div>;
+    return <div className='text-2xl text-primary text-center my-8'>Your shopping cart is empty.</div>;
   }
 
   return (
@@ -56,14 +65,15 @@ const CartSection = () => {
             <ArrowCircleLeftIcon className="w-6 h-6" /> 
             <p>Go Back </p>
         </div>
-      <h2 className="text-3xl font-bold py-4">My Cart</h2>
+      <h2 className="text-3xl font-bold py-2">My Cart</h2>
+      <p className='font-bold pb-4'>Books: {cartCount}</p>
       <hr className="h-0.5 w-42 mb-8 bg-primary border-0 dark:bg-gray-700"></hr>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
         
         {cartItems.map(book => (            
           <div key={book.id} className="flex justify-between border mb-8 bg-white p-4 rounded-lg">
-            <img src={book.cover_image} alt={book.title} className="object-cover max-w-sm" />
-            <div className='flex justify-center mt-8'>
+            <img src={book.cover_image} alt={book.title} className="object-scale-down max-w-sm" />
+            <div className='flex justify-center ml-4 mt-8'>
             <div className='mt-4  text-text font-bold'>
             <h3 className="text-2xl pb-2 font-bold">{book.title}</h3>
             <p className='text-lg'>Author: {book.author}</p>
