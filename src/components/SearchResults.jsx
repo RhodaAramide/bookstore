@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import BookCard from './BookCard';
 import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const SearchResults = (props) => {
   const [filteredBooks, setBooks] = useState([]);
@@ -28,6 +30,8 @@ const SearchResults = (props) => {
 }, [location.search]);
 
   return (
+    <div>
+      <Navbar />
     <div className="bg-accent text-text mb-8">
       <div className="container mx-auto">
       <div className='flex justify-start gap-2 pt-4 text-primary cursor-pointer' onClick={handleClick}>
@@ -45,6 +49,8 @@ const SearchResults = (props) => {
     ))}
       </div>
       </div>
+    </div>
+    <Footer />
     </div>
   )
 }

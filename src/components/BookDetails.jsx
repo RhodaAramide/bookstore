@@ -71,7 +71,7 @@ const BookDetails = () => {
     <div>
       <Navbar />
       <div className='container mx-auto'>
-      <div className='flex justify-start gap-2 pt-4 text-primary' onClick={handleClick}>
+      <div className='flex justify-start gap-2 pt-4 cursor-pointer text-primary' onClick={handleClick}>
             <ArrowCircleLeftIcon className="w-6 h-6" /> 
             <p>Go Back </p>
         </div>

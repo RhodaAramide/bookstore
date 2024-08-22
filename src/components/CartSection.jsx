@@ -48,7 +48,7 @@ const CartSection = () => {
     localStorage.setItem('cartItems', JSON.stringify(updatedCart)); // Update localStorage
     setCartCount(updatedCart.length); // Update cart count
   };
-  
+
   const handleCartCheckout = () => {
     alert("Order has been placed successfully.")
     // navigate('/checkout');
@@ -61,12 +61,12 @@ const CartSection = () => {
   return (
     <div className='bg-accent'>
       <div className='container mx-auto  px-8'>
-      <div className='flex justify-start gap-2 pt-4 text-primary' onClick={handleClick}>
+      <div className='flex justify-start gap-2 pt-4 cursor-pointer text-primary' onClick={handleClick}>
             <ArrowCircleLeftIcon className="w-6 h-6" /> 
             <p>Go Back </p>
         </div>
       <h2 className="text-3xl font-bold py-2">My Cart</h2>
-      <p className='font-bold pb-4'>Books: {cartCount}</p>
+      <p className='font-bold text-text pb-4'>Books: {cartCount}</p>
       <hr className="h-0.5 w-42 mb-8 bg-primary border-0 dark:bg-gray-700"></hr>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
         

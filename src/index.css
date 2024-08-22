@@ -13,4 +13,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.badge {
+  position: absolute;/* Adjust this value to position horizontally */
+  background-color: white; /* Adjust the background color as needed */
+  color: #393280;
+  border-radius: 50%;
+  text-align: center;
+  padding-bottom: 15px;
+ top: 30%;
+  height: 1.5rem; /* Adjust the size as needed */
+  width: 1.5rem;  /* Adjust the size as needed */  
+  font-size: 1rem; /* Adjust the font size */
+   
+}
 

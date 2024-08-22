@@ -4,8 +4,10 @@ import samplelogo from '../assets/images/samplelogo.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { useAppContext } from "../AppContext";
 
 const Navbar = () => {
+  const { wishlistCount, cartCount } = useAppContext();
   const navigate = useNavigate(); // Initialize useNavigate
   const [title, setTitle] = useState("");
   const [isOpen, setIsOpen] = useState(false); 
@@ -35,7 +37,7 @@ const handleWishClick = () => {
 };
 
   return (
-    <nav className="bg-text text-white py-4 flex items-center justify-center">
+    <nav className="relative bg-text text-white py-4 flex items-center justify-center">
     <div className="container mx-auto">
       <div className="">
         <div className="flex justify-between py-2">
@@ -90,11 +92,21 @@ const handleWishClick = () => {
           <div className='flex justify-between pt-2 text-lg space-x-4'>          
           <div className='flex justify-between hover:cursor-pointer' onClick={handleCartClick}>
             <ShoppingCartIcon className="w-6 h-6" />
-            <p>CART</p>
+            <p className='mr-4'> {cartCount > 0 && (
+               <span className="badge">
+                  {cartCount}
+               </span>
+            )} </p>
+          
+               
           </div>
           <div className='flex justify-between hover:cursor-pointer' onClick={handleWishClick}>            
             <HeartIcon className="w-6 h-6" />
-            <p>WISHLIST</p>
+            <p> { wishlistCount > 0 && (
+              <span className="badge">
+                {wishlistCount}
+              </span>
+            )}</p>
           </div> 
           </div> 
           </div>        

@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useAppContext } from "../AppContext";
+import { useNavigate } from 'react-router-dom';
+import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 
 
 const WishList = () => {  
   const [wishlistItems, setWishlistItems] = useState([]);
   const { wishlistCount, setWishlistCount } = useAppContext();
+  const navigate = useNavigate(); // Initialize useNavigate
+  
+  
+  const handleClick = () => { //This function is used to navigate to the previous page
+    navigate(-1);
+  };
+
   useEffect(() => {
     const storedWish = JSON.parse(localStorage.getItem("wishlistItems")) || [];
     setWishlistItems(storedWish);
@@ -28,9 +37,14 @@ const WishList = () => {
   return (
     <div className=' bg-accent'>
       <div className='container mx-auto'>
+      <div className='flex justify-start gap-2 pt-4 cursor-pointer text-primary' onClick={handleClick}>
+            <ArrowCircleLeftIcon className="w-6 h-6" /> 
+            <p>Go Back </p>
+        </div>
       <h2 className="text-3xl font-bold py-2"> My Wishlist</h2>
-      <p className='font-bold pb-4'>Books: {wishlistCount}</p>
+      <p className='font-bold text-text pb-4'>Books: {wishlistCount}</p>
       <hr className="h-0.5 w-42 mb-8 bg-primary border-0 dark:bg-gray-700"></hr>
+      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
         {wishlistItems.map(book => (
            <div key={book.id} className="flex justify-between border mb-8 bg-white p-4 rounded-lg">
